@@ -30,22 +30,22 @@ export const RegisterForm = () => {
     };
 
     return (
-        <form onsubmit={handlesubmit}>
-            <div class="mb-3">
-                <label class="form-label">Name</label>
-                <input type="text" name="name"  class="form-control" onchange={handlechange}/>
+        <form onSubmit={handlesubmit}>
+            <div className="mb-3">
+                <label className="form-label">Name</label>
+                <input type="text" name="name"  className="form-control" onChange={onChangeHandler}/>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" onchange={handlechange}/>
+            <div className="mb-3">
+                <label className="form-label">Email</label>
+                <input type="email" name="email" className="form-control" onChange={onChangeHandler}/>
             </div>
             
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" onchange={handlechange}/>
+            <div className="mb-3">
+                <label className="form-label">Password</label>
+                <input type="password" name="password" className="form-control" onChange={onChangeHandler}/>
             </div>
-            <button type="submit">register</button>
+            <button className='btn btn-primary' type="submit">register</button>
         </form>
     );
 };

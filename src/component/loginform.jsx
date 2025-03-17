@@ -1,7 +1,7 @@
 import react, { useState } from 'react';
 
 export const LoginForm = () => {
-    const [formData, setFormData] = useState({email: '',password:''});
+    const [formData, setFormData] = useState({ email: '', password: '' });
 
     const onChangeHandler = (event) => {
         const property = event.target.name;
@@ -12,7 +12,9 @@ export const LoginForm = () => {
     }
     const handlesubmit = async (e) => {
         e.preventDefault();
-        const newUrl = `https://to-do-list-app-capstone4.onrender.com/api/users/login`
+        const endPoint = '/user/login'
+        const baseUrl = import.meta.env.VITE_BASE_URL
+        const newUrl = `${baseUrl}${endPoint}`
         const result = await fetch(newUrl, {
             method: "POST",
             headers: {
@@ -30,18 +32,18 @@ export const LoginForm = () => {
     };
 
     return (
-        <form onsubmit={handlesubmit}>
-            
-                <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" onchange={handlechange}/>
+        <form onSubmit={handlesubmit}>
+
+            <div className="mb-3">
+                <label className="form-label">Email</label>
+                <input type="email" name="email" className="form-control" onChange={onChangeHandler} />
             </div>
-            
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" onchange={handlechange}/>
+
+            <div className="mb-3">
+                <label className="form-label">Password</label>
+                <input type="password" className="form-control" onChange={onChangeHandler} />
             </div>
-            <button type="submit">login</button>
+            <button className='btn btn-primary' type="submit">login</button>
         </form>
     );
 };
