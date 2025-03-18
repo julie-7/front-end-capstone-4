@@ -1,6 +1,6 @@
-import react, { useState } from 'react';
+import React , {useState} from 'react'
 
-export const LoginForm = () => {
+export const LogIn = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
 
     const onChangeHandler = (event) => {
@@ -46,5 +46,4 @@ export const LoginForm = () => {
             <button className='btn btn-primary' type="submit">login</button>
         </form>
     );
-};
-
+}

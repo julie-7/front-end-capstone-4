@@ -1,6 +1,7 @@
-import react, { useState } from 'react';
+import React , {useState} from 'react'
 
-export const RegisterForm = () => {
+
+export const Register = () => {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
 
     const onChangeHandler = (event) => {
@@ -33,20 +34,19 @@ export const RegisterForm = () => {
         <form onSubmit={handlesubmit}>
             <div className="mb-3">
                 <label className="form-label">Name</label>
-                <input type="text" name="name"  className="form-control" onChange={onChangeHandler}/>
+                <input type="text" name="name" className="form-control" onChange={onChangeHandler} />
             </div>
 
             <div className="mb-3">
                 <label className="form-label">Email</label>
-                <input type="email" name="email" className="form-control" onChange={onChangeHandler}/>
+                <input type="email" name="email" className="form-control" onChange={onChangeHandler} />
             </div>
-            
+
             <div className="mb-3">
                 <label className="form-label">Password</label>
-                <input type="password" name="password" className="form-control" onChange={onChangeHandler}/>
+                <input type="password" name="password" className="form-control" onChange={onChangeHandler} />
             </div>
             <button className='btn btn-primary' type="submit">register</button>
         </form>
     );
-};
-
+}
