@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
-import { RegisterForm } from "./component/RegisterForm";
+import { RegisterForm } from "./component/RegisterForm.jsx";
 import { LoginForm } from "./component/LoginForm.jsx";
 import { Notfound } from "./component/Notfound.jsx";
 
