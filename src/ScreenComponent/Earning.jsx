@@ -9,8 +9,8 @@ export const Earning = () => {
                     <EarningForm />
                     <EarningTable />
                 </main>
-            
-            
+
+
             </>
             )
     }
