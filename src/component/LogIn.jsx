@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React, { useState } from 'react'
 
 export const LogIn = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
@@ -26,8 +26,12 @@ export const LogIn = () => {
         )
 
         if (response.ok) {
-
+            // save the token
+            // locaStorage.setItem(token, "credentials")
+            // locaStorage.setItem(formData.email, "email")
         } else {
+            //send a notification with wrong credential message
+            // console log
         }
     };
 

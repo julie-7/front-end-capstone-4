@@ -1,28 +1,36 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Register } from "./component/Register.jsx";
 import { LogIn } from "./component/LogIn.jsx";
 import { Forbiden } from "./component/Forbiden.jsx";
 import { Menu } from "./component/Menu.jsx";
+import { TaskScreen } from "./ScreenComponent/TaskScreen.jsx";
 
 export const App = () => {
+
+
+
+  /*useEffect(() => {
+
+    token = window.localStorage.getItem(`credential`)
+    validateToken()
+  }, [])*/
+
   return (
     <Router>
+      <Menu></Menu>
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<LogIn />} />
         <Route path="*" element={<Forbiden />} />
+        <Route path="/task" element={<TaskScreen/>}/>
       </Routes>
     </Router>
   )
 
-    useEffect(() => {
+    
 
-      token = window.localStorage.getItem(`todolist`)
-      validateToken()
-    }, [])
-
-  return (
+  /*return (
     <>
       <BrowserRouter>
         {isLogin ? <menu /> : ""}
@@ -32,7 +40,7 @@ export const App = () => {
         </Routes>
       </BrowserRouter>
     </>
-  )
+  )*/
 }
 
 export default App

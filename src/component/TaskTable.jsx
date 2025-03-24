@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
-export const earningtable = () => {
+import React  , {useState, useEffect} from 'react'
+
+export const TaskTable = () => {
     const [earnings, setEarning] = useState([])
 
     const baseurl = import.meta.env.VITE_BASE_URL
     let token = ""
 
     const getEarning = async () => {
-        const endpoint = "earnings"
+        
+        token = localStorage.getItem("credentials")
+        const email = localStorage.getItem("email")
+        const endpoint = `/task/${email}`
         const newUrl = `${baseurl}${endpoint}`
 
         const response = await fetch(newUrl, {
@@ -45,19 +49,19 @@ export const earningtable = () => {
                 <tbody>
                     {
                         earnings.map((item) => (
-                       <tr key={item.earningsid}>
-                         <td>{item.title}</td>
-                         <td>{item.description}</td>
-                         <td>{item.status}</td>
-                         <td>{item.due_date}</td>
-                         <td>{item.email}</td>
-                       </tr>
-                    )
-             )
-            
+                            <tr key={item.earningsid}>
+                                <td>{item.title}</td>
+                                <td>{item.description}</td>
+                                <td>{item.status}</td>
+                                <td>{item.due_date}</td>
+                                <td>{item.email}</td>
+                            </tr>
+                        )
+                        )
+
                     }
                 </tbody>
             </table>
         </>
     )
-};
+}
