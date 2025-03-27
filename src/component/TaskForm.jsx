@@ -39,13 +39,13 @@ export const TaskForm = () => {
       },
       body: JSON.stringify(formData)
     })
-    if(response.ok){
+    if (response.ok) {
       setNotification("Task Created")
 
-      setTimeout(() =>{
+      setTimeout(() => {
         window.location.href = "/task"
       }, 2000)
-    }else {
+    } else {
       const errMessage = await response.json()
       console.log(errMessage)
       setNotification(errMessage.error)
@@ -57,25 +57,26 @@ export const TaskForm = () => {
     const token = window.localStorage.getItem("task-credential")
     const endpoint = 'task'
     const newUrl = `${baseUrl}${endpoint}`
-  },
 
-  const response = await fetch(newUrl,{
-    method:"GET",
-    headers: {
-      'content-Type': 'application/json',
-      'Authorization': token
-    }
-    
+
+    const response = await fetch(newUrl, {
+      method: "GET",
+      headers: {
+        'content-Type': 'application/json',
+        'Authorization': token
+      }
+
     })
 
-    if(response.ok) {
+    if (response.ok) {
       const data = await response.json()
       settask(data)
-    }else {
-     setNotification("Error on fetching task")
+    } else {
+      setNotification("Error on fetching task")
     }
-}
+  }
+
   return (
     <div>TaskForm</div>
   )
-
+}
