@@ -76,6 +76,38 @@ export const TaskForm = () => {
     }
   }
 
+  useEffect(() => {
+    gettask()
+  }, [])
+
+  return (
+    <>
+      <p className='display-2 text-center'>Task Form</p>
+
+      <div className='card bg-light mb-3 mx-5'>
+        <div className="card header">Log in</div>
+        <div className='card-body'>
+
+          <form onSubmit={submitHandler}>
+
+            <div>
+              <label className='form-label mt-4'>Task</label>
+              <input type='text' name='task' onChange={onChangeHandler}>
+              </input>
+
+              <label className='form-label mt-4'>description</label>
+              <input type='text' name='description' onChange={onChangeHandler}>
+              </input>
+            </div>
+
+            <button className='btn btn-primary w-100 mt-3'>create</button>
+          </form>
+          <p className='mt-3'>{notification}</p>
+        </div>
+      </div>
+    </>
+  )
+
   return (
     <div>TaskForm</div>
   )

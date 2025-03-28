@@ -5,6 +5,7 @@ import { LogIn } from "./component/LogIn.jsx";
 import { Forbiden } from "./component/Forbiden.jsx";
 import { Menu } from "./component/Menu.jsx";
 import { TaskScreen } from "./ScreenComponent/TaskScreen.jsx";
+import { TaskForm } from "./component/TaskForm.jsx";
 
 export const App = () => {
 
