@@ -26,12 +26,9 @@ export const LogIn = () => {
         )
 
         if (response.ok) {
-            // save the token
-            // locaStorage.setItem(token, "credentials")
-            // locaStorage.setItem(formData.email, "email")
+            token = localStorage.getItem('task-credential')
         } else {
-            //send a notification with wrong credential message
-            // console log
+            console.log("wrong credintial")
         }
     };
 
