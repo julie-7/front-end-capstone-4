@@ -3,7 +3,7 @@ import { Await } from 'react-router-dom'
 
 export const TaskForm = () => {
 
-  const [formData, setFormData] = useState("")({
+  const [formData, setFormData] = useState({
     taskId: "",
     task: "",
     description: ""
@@ -108,7 +108,5 @@ export const TaskForm = () => {
     </>
   )
 
-  return (
-    <div>TaskForm</div>
-  )
+
 }
